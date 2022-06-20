@@ -1,6 +1,22 @@
 <script>
+    import { onMount } from "svelte";
+    const endpoint = "https://jsonplaceholder.typicode.com/posts";
+    let list = [];
     export let params;    
+
+    onMount(async function() {
+        const respose = await fetch(endpoint);
+        const data = await respose.json();
+        list = data;
+    })
 </script>
-<div>
+<article>
     <span>{params.artistpkey}</span>
-</div>
+    {#each list as item}
+        {#if item.id == params.artistpkey}
+            <p>{item.title} -----!!!!!!!!!!!!!!!!!!!</p>
+        {:else}
+            <p>-----</p>
+        {/if}
+    {/each}
+</article>

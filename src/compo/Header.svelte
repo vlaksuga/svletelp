@@ -1,19 +1,20 @@
 <script>
-	export let title; 
+	export let title;
+	import TopHeader from "./TopHeader.svelte";	
+	import MainHeader from "./MainHeader.svelte";
 </script>
 
 <header>
-	<h1>{title}</h1>
+	<TopHeader/>	
+	<MainHeader title={title}/>
 </header>
 
 <style>
 	header {
-		text-transform: uppercase;
-		height: 48px;		
+		width: 100%;			
+		text-transform: uppercase;		
 	}
 
-	h1 {		
-		margin: 0;
-	}
+
 
 </style>

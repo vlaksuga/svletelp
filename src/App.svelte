@@ -1,17 +1,26 @@
-<script>	
-	import Header from "./compo/Header.svelte";	
+<script>		
 	import Router from 'svelte-spa-router';
+
+	import Header from "./compo/Header.svelte";	
+
 	import Home from "./Routes/Home/Home.svelte";
 	import Artist from "./Routes/Artist/Artist.svelte";
+	import Product from "./Routes/Product/Product.svelte";
+	import Search from "./Routes/Search/Search.svelte";
+
+	export let title;
 
 	const routes = {
 		'/' : Home,
-		'/artist/:artistpkey' : Artist
+		'/artist/:artistpkey' : Artist,
+		'/product' : Product,
+		'/search' : Search,
+		'/search/:keyword' : Search,		
 	}
 </script>
 
 <main>
-	<Header title={"logo"}/>	
+	<Header title={title}/>
 	<Router {routes}/>
 </main>
 

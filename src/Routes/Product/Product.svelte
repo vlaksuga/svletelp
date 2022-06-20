@@ -2,5 +2,5 @@
 
 </script>
 <article>
-    this is home
+    this is product
 </article>
