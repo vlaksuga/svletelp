@@ -15,8 +15,6 @@
     {#each list as item}
         {#if item.id == params.artistpkey}
             <p>{item.title} -----!!!!!!!!!!!!!!!!!!!</p>
-        {:else}
-            <p>-----</p>
         {/if}
     {/each}
 </article>
